@@ -7,4 +7,19 @@ public class thing
 
 	}
 
+	
+	public static void bubble() 
+	{
+		
+	}
+	
+	public static void select() 
+	{
+		
+	}
+	
+	public static void insert() 
+	{
+		
+	}
 }
