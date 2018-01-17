@@ -14,7 +14,14 @@ public class thing
 		int swaps = 0;
 		while(swaps!=0)
 		{
-		
+			for(int i=1; i<test.length; i++) 
+			{
+				if(test[0]>test[i])
+				{
+					swapper(test, , i);
+				}
+			
+			}
 	
 		}
 		
