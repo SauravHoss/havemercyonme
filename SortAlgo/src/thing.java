@@ -1,30 +1,47 @@
 
 public class thing 
 {
-
 	public static void main(String[] args) 
 	{
 		int [] test = {3,10,4,5,7,6,8,1};
-		System.out.println(bubble(test));
+		
+	bubble(test);
+		System.out.print(java.util.Arrays.toString(test));
 	}
-
 	
 	public static void bubble(int [] test) 
 	{
-		int swaps = 0;
-		while(swaps!=0)
+		/* works
 		{
-			for(int i=1; i<test.length; i++) 
+			int counter = 5;
+			while(counter > 0) 		
 			{
-				if(test[0]>test[i])
+				counter = 0;
+				for(int j=0; j<test.length-1; j++) 
 				{
-					swapper(test, , i);
+					if(test[j]>test[j+1])
+					{
+						swapper(test, j, j+1);
+						counter++;
+					}
+				
+				}
+			}		
+		}
+		*/ 
+		//saurav Sort
+		for(int i=test.length; i>0; i--)
+		{
+			for(int j=0; j<test.length-1-i; j++) 
+			{
+				if(test[j]>test[j+1])
+				{
+					swapper(test, j, j+1);
 				}
 			
 			}
 	
-		}
-		
+		}		
 	}
 	
 	public static void select() 
