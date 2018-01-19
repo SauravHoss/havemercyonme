@@ -3,33 +3,38 @@ public class thing
 {
 	public static void main(String[] args) 
 	{
-		int [] test = {3,10,4,5,7,6,8,1};
+		//Tester
+		int [] test1 = {1,4,4,5,2,4,3,17,0};
+		double [] test2 = {1.1,4.1,4.2,5.0,2.0,4.0,3.0,17.0,0.0};
+		String [] test3 = {"zebra", "tortilla","abba", "foo", "bar", "aba"};
 		
-	bubble(test);
-		System.out.print(java.util.Arrays.toString(test));
+		
+		
+		
+		bubble(test1);
+		System.out.print(java.util.Arrays.toString(test1));
 	}
 	
 	public static void bubble(int [] test) 
 	{
-		/* works
+		
+		int counter = 5;
+		while(counter > 0) 		
 		{
-			int counter = 5;
-			while(counter > 0) 		
+			counter = 0;
+			for(int j=0; j<test.length-1; j++) 
 			{
-				counter = 0;
-				for(int j=0; j<test.length-1; j++) 
+				if(test[j]>test[j+1])
 				{
-					if(test[j]>test[j+1])
-					{
-						swapper(test, j, j+1);
-						counter++;
-					}
-				
+					swapper(test, j, j+1);
+					counter++;
 				}
-			}		
-		}
-		*/ 
-		//saurav Sort
+				
+			}
+		}		
+		
+		/*
+		 Saurav Sort
 		for(int i=test.length; i>0; i--)
 		{
 			for(int j=0; j<test.length-1-i; j++) 
@@ -41,7 +46,8 @@ public class thing
 			
 			}
 	
-		}		
+		}	
+		*/	
 	}
 	
 	public static void select() 
@@ -49,8 +55,17 @@ public class thing
 		
 	}
 	
-	public static void insert() 
+	public static void insert(int [] test) 
 	{
+		for(int i=0; i < test.length-1; i++) 
+		{
+			for(int j=i+1; i<test.length-1;j++)
+				if(test[i] > test [j]) 
+				{
+			
+				}	
+		}
+		
 		
 	}
 	
