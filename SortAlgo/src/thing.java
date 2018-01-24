@@ -14,15 +14,28 @@ public class thing
 		long end = System.nanoTime();
 		long time = end - start;
 		System.out.println("Test 1 Bubble Sort Time: " + time + " nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test1));
-
+/*
+		//Insertion Sort Test
+		start = System.nanoTime();
+		insert(test1);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println("Test 1 Insertion Sort Time: "+ time +" nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test2));
+*/		
+		//Selection Sort Test
+		start = System.nanoTime();
+		select(test2);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println("Test 2 Selection Sort Time: "+ time +" nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test2));
+	
+/*		//Bubble Sort Test
 		start = System.nanoTime();
 		bubbles(test3);
 		end = System.nanoTime();
 		time = end - start;
 		System.out.println("Test 3 Bubble Sort Time: "+ time +" nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test3));
-
-		
-		
+*/
 	}
 	
 		//Uses Bubble sort for an array of integers
@@ -32,9 +45,9 @@ public class thing
 			while(counter > 0) 		
 			{
 				counter = 0;
-				for(int j=0; j<test.length-1; j++) 
+				for(int j=0; j < test.length-1; j++) 
 				{
-					if(test[j]>test[j+1])
+					if(test[j] > test[j+1])
 					{
 						swapperi(test, j, j+1);
 						counter++;
@@ -50,7 +63,7 @@ public class thing
 			while(counter > 0) 		
 			{
 				counter = 0;
-				for(int j=0; j<test.length-1; j++) 
+				for(int j=0; j < test.length-1; j++) 
 				{
 					if(test[j].compareTo(test[j+1])>0)
 					{
@@ -77,29 +90,45 @@ public class thing
 		}	
 		*/	
 	
-		public static void select() 
-		{
-		
-		}
-	
-		public static void insert(int [] test) 
+		//Uses Selection sort for an array of double
+		public static void select(double[] test) 
 		{
 			for(int i=0; i < test.length-1; i++) 
 			{
-				for(int j=i+1; i<test.length-1;j++) 
-				{
-					if(test[i] > test [j]) 
+				double min = test[i];
+				int cf=i;
+					for(int j = i; j < test.length; j++) 
 					{
+						if(test[j] < min) 
+						{
+							min = test[j];
+							cf = j;
+						}
+					}
+					if(min < test[i]) 
+					{
+						swapperd(test, i, cf);
+					}
+			} 	
+		}
+		//Uses Insertion sort for an array of integers
+		public static void insert(int [] test) 
+		{
 			
-					}	
-				}
-			}
 		}
 	
 	//Swaps two items in an array of integers
 	public static void swapperi(int [] arr, int x, int y) 
 	{
 		int holder = arr[x];
+		arr[x] = arr[y];
+		arr[y] = holder;	
+	}
+	
+	//Swaps two items in an array of doubles
+	public static void swapperd(double [] arr, int x, int y) 
+	{
+		double holder = arr[x];
 		arr[x] = arr[y];
 		arr[y] = holder;	
 	}
