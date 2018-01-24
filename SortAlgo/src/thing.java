@@ -10,9 +10,11 @@ public class thing
 		
 		
 		
+		bubbles(test3);
+		System.out.println(java.util.Arrays.toString(test3));
 		
 		bubble(test1);
-		System.out.print(java.util.Arrays.toString(test1));
+		System.out.println(java.util.Arrays.toString(test1));
 	}
 	
 	public static void bubble(int [] test) 
@@ -26,12 +28,30 @@ public class thing
 			{
 				if(test[j]>test[j+1])
 				{
-					swapper(test, j, j+1);
+					swapperi(test, j, j+1);
 					counter++;
 				}
-				
 			}
-		}		
+		}	
+	}	
+		
+		public static void bubbles(String [] test) 
+		{
+			
+			int counter = 5;
+			while(counter > 0) 		
+			{
+				counter = 0;
+				for(int j=0; j<test.length-1; j++) 
+				{
+					if(test[j].compareTo(test[j+1])>0)
+					{
+						swappers(test, j, j+1);
+						counter++;
+					}
+					
+				}
+			}	
 		
 		/*
 		 Saurav Sort
@@ -69,11 +89,19 @@ public class thing
 		
 	}
 	
-	public static void swapper(int [] arr, int x, int y) 
+	public static void swapperi(int [] arr, int x, int y) 
 	{
 		int holder = arr[x];
 		arr[x] = arr[y];
 		arr[y] = holder;
+		
+	}
+	
+	public static void swappers(String[] test, int x, int y) 
+	{
+		String holder = test[x];
+		test[x] = test[y];
+		test[y] = holder;
 		
 	}
 }
