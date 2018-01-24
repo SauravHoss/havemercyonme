@@ -8,14 +8,21 @@ public class thing
 		double [] test2 = {1.1,4.1,4.2,5.0,2.0,4.0,3.0,17.0,0.0};
 		String [] test3 = {"zebra", "tortilla","abba", "foo", "bar", "aba"};
 		
-		
-		
-		//Bubble Sort Test
-		bubbles(test3);
-		System.out.println(java.util.Arrays.toString(test3));
-		
+		//Bubble Sort Test			
+		long start = System.nanoTime();
 		bubble(test1);
-		System.out.println(java.util.Arrays.toString(test1));
+		long end = System.nanoTime();
+		long time = end - start;
+		System.out.println("Test 1 Bubble Sort Time: " + time + " nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test1));
+
+		start = System.nanoTime();
+		bubbles(test3);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println("Test 3 Bubble Sort Time: "+ time +" nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test3));
+
+		
+		
 	}
 	
 		//Uses Bubble sort for an array of integers
