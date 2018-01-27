@@ -8,20 +8,13 @@ public class thing
 		double [] test2 = {1.1,4.1,4.2,5.0,2.0,4.0,3.0,17.0,0.0};
 		String [] test3 = {"zebra", "tortilla","abba", "foo", "bar", "aba"};
 		
-		//Bubble Sort Test			
+		//Insertion Sort Test
 		long start = System.nanoTime();
-		bubble(test1);
+		insert(test1);
 		long end = System.nanoTime();
 		long time = end - start;
-		System.out.println("Test 1 Bubble Sort Time: " + time + " nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test1));
-/*
-		//Insertion Sort Test
-		start = System.nanoTime();
-		insert(test1);
-		end = System.nanoTime();
-		time = end - start;
-		System.out.println("Test 1 Insertion Sort Time: "+ time +" nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test2));
-*/		
+		System.out.println("Test 1 Insertion Sort Time: "+ time +" nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test1));
+		
 		//Selection Sort Test
 		start = System.nanoTime();
 		select(test2);
@@ -29,13 +22,12 @@ public class thing
 		time = end - start;
 		System.out.println("Test 2 Selection Sort Time: "+ time +" nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test2));
 	
-/*		//Bubble Sort Test
+		//Bubble Sort Test
 		start = System.nanoTime();
 		bubbles(test3);
 		end = System.nanoTime();
 		time = end - start;
 		System.out.println("Test 3 Bubble Sort Time: "+ time +" nanoseconds" + "\n	Result: " + java.util.Arrays.toString(test3));
-*/
 	}
 	
 		//Uses Bubble sort for an array of integers
@@ -111,10 +103,20 @@ public class thing
 					}
 			} 	
 		}
+		
 		//Uses Insertion sort for an array of integers
 		public static void insert(int [] test) 
-		{
-			
+		{			
+	        for (int i = 1; i < test.length; i++) 
+	        {
+	            for(int j = i ; j > 0 ; j--)
+	            {
+	                if(test[j] < test[j-1])
+	                {
+	                   swapperi(test,j,(j-1));
+	                }
+	            }
+	        }
 		}
 	
 	//Swaps two items in an array of integers
