@@ -4,8 +4,8 @@ public class thing
 	public static void main(String[] args) 
 	{
 		//Testers
-		int [] test1 = {1,4,4,5,2,4,3,17,0};
-		double [] test2 = {1.1,4.1,4.2,5.0,2.0,4.0,3.0,17.0,0.0};
+		int [] test1 = {1, 4, 4, 5, 2, 4, 3, 17, 0};
+		double [] test2 = {1.1, 4.1, 4.2, 5.0, 2.0, 4.0, 3.0, 17.0, 0.0};
 		String [] test3 = {"zebra", "tortilla","abba", "foo", "bar", "aba"};
 		
 		//Insertion Sort Test
@@ -37,7 +37,7 @@ public class thing
 			while(counter > 0) 		
 			{
 				counter = 0;
-				for(int j=0; j < test.length-1; j++) 
+				for(int j = 0; j < test.length-1; j++) 
 				{
 					if(test[j] > test[j+1])
 					{
@@ -55,9 +55,9 @@ public class thing
 			while(counter > 0) 		
 			{
 				counter = 0;
-				for(int j=0; j < test.length-1; j++) 
+				for(int j = 0; j < test.length-1; j++) 
 				{
-					if(test[j].compareTo(test[j+1])>0)
+					if(test[j].compareTo(test[j+1]) > 0)
 					{
 						swappers(test, j, j+1);
 						counter++;
@@ -68,11 +68,11 @@ public class thing
 		
 		/*
 		Saurav Sort
-		for(int i=test.length; i>0; i--)
+		for(int i = test.length; i > 0; i--)
 		{
-			for(int j=0; j<test.length-1-i; j++) 
+			for(int j = 0; j < test.length-1-i; j++) 
 			{
-				if(test[j]>test[j+1])
+				if(test[j] > test[j+1])
 				{
 					swapper(test, j, j+1);
 				}
@@ -85,10 +85,10 @@ public class thing
 		//Uses Selection sort for an array of double
 		public static void select(double[] test) 
 		{
-			for(int i=0; i < test.length-1; i++) 
+			for(int i = 0; i < test.length-1; i++) 
 			{
 				double min = test[i];
-				int cf=i;
+				int cf = i;
 					for(int j = i; j < test.length; j++) 
 					{
 						if(test[j] < min) 
